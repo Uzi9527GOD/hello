@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: "root"
+    password: "123456"
+    url: jdbc:mysql://localhost:3306/movie?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8
+  cache:
+    redis:
+      #使用前缀
+      use-key-prefix: true
+      #redis过期时间
+      time-to-live: 60sn
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: uuid
+      #schema: classpath:/sql/schema.sql
+  type-aliases-package: com.movie.api.model.entity
